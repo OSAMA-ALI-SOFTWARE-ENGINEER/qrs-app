@@ -6,21 +6,21 @@ import './globals.css';
 
 const outfit = Outfit({
   subsets: ['latin'],
-  weights: [400, 500, 600, 700],
+  weight: ['400', '500', '600', '700'],
   display: 'swap',
   variable: '--font-outfit',
 });
 
 const poppins = Poppins({
   subsets: ['latin'],
-  weights: [400, 500, 600],
+  weight: ['400', '500', '600'],
   display: 'swap',
   variable: '--font-poppins',
 });
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
-  weights: [400, 500, 600],
+  weight: ['400', '500', '600'],
   display: 'swap',
   variable: '--font-jetbrains-mono',
 });

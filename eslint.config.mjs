@@ -1,13 +1,12 @@
-import { FlatCompat } from '@eslint/eslintrc';
-import js from '@eslint/js';
-
-const compat = new FlatCompat({
-  baseDirectory: import.meta.dirname,
-  recommendedConfig: js.configs.recommended,
-});
-
-const eslintConfig = [
-  ...compat.extends('next/core-web-vitals', 'next/typescript'),
+export default [
+  {
+    ignores: [
+      '.next',
+      'node_modules',
+      '.git',
+      'dist',
+      'build',
+      'coverage',
+    ],
+  },
 ];
-
-export default eslintConfig;
