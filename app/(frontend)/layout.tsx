@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Outfit, Poppins, JetBrains_Mono } from 'next/font/google';
 import { buildMetadata } from '@/lib/metadata';
 import { SiteChrome } from '@/components/layout/SiteChrome';
+import { CookieConsentProvider } from '@/components/cookie-consent/CookieConsentProvider';
 import './globals.css';
 
 const outfit = Outfit({
@@ -38,7 +39,9 @@ export default function FrontendLayout({ children }: { children: React.ReactNode
       className={`${outfit.variable} ${poppins.variable} ${jetbrainsMono.variable}`}
     >
       <body className="font-body bg-cream-50 text-text-strong">
-        <SiteChrome>{children}</SiteChrome>
+        <CookieConsentProvider>
+          <SiteChrome>{children}</SiteChrome>
+        </CookieConsentProvider>
       </body>
     </html>
   );
