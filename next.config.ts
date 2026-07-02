@@ -42,7 +42,6 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  turbopack: {},
   async headers() {
     return [
       {
