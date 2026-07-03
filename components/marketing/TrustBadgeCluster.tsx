@@ -38,11 +38,11 @@ export function TrustBadgeCluster() {
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-6">
-      {badges.map((badge, idx) => {
+      {badges.map((badge) => {
         const Icon = badge.icon;
         return (
           <div
-            key={idx}
+            key={badge.label}
             className={`group flex flex-col items-start gap-space-4 px-space-6 py-space-6 rounded-xl border backdrop-blur-sm transition-all duration-300 ${
               badge.highlight
                 ? 'border-teal-500/50 bg-teal-500/15 hover:bg-teal-500/25 shadow-lg shadow-teal-500/20'

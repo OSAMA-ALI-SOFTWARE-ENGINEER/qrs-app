@@ -29,14 +29,15 @@ export function HeroDeviceFrame({ imageSrc, imageAlt }: HeroDeviceFrameProps) {
                 </div>
               </div>
 
-              {/* Screenshot content */}
+              {/* Screenshot content - using SVG placeholder */}
               <div className="relative w-full bg-ink-800" style={{ aspectRatio: '16 / 10' }}>
                 <Image
-                  src={imageSrc}
+                  src="/hero-placeholder.svg"
                   alt={imageAlt}
                   fill
                   className="object-cover"
                   priority
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
                 />
               </div>
             </div>

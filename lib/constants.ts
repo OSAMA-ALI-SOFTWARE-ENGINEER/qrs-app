@@ -15,7 +15,7 @@ export const COMPLIANCE_LINKS = {
 };
 
 export const NAV_LINKS = [
-  { label: 'Product', href: '#' },
-  { label: 'Trust', href: COMPLIANCE_LINKS.security },
-  { label: 'Company', href: '#' },
+  { label: 'Product', href: '/platform/' },
+  { label: 'Trust', href: '/trust/' },
+  { label: 'Company', href: '/about/' },
 ];
