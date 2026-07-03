@@ -21,32 +21,34 @@ export function VerifiedSealBadge({
     <div className="relative inline-block">
       <button
         onClick={() => setShowPopover(!showPopover)}
-        className="inline-flex items-center gap-space-2 px-space-4 py-space-2 rounded-pill border border-teal-500 bg-ink-800 text-white hover:bg-ink-700 transition-colors duration-base"
+        className="inline-flex items-center gap-space-3 px-space-5 py-space-3 rounded-full border border-teal-500/60 bg-gradient-to-r from-teal-500/20 to-teal-600/10 hover:from-teal-500/30 hover:to-teal-600/20 text-white transition-all duration-300 hover:border-teal-400/80 hover:shadow-lg hover:shadow-teal-500/20 group"
       >
-        <CheckCircle2 size={16} className="text-teal-500" />
-        <span className="text-small font-semibold">Lineage verified</span>
-        <span className="font-mono text-micro text-teal-500">{truncatedHash}</span>
+        <CheckCircle2 size={18} className="text-teal-400 group-hover:text-teal-300 transition-colors" />
+        <span className="text-small font-semibold text-teal-50">Lineage verified</span>
+        <span className="font-mono text-micro text-teal-300 group-hover:text-teal-200 transition-colors">{truncatedHash}</span>
       </button>
 
       {showPopover && (
-        <div className="absolute top-full mt-space-2 left-0 bg-ink-700 border border-teal-700 rounded-md shadow-md p-space-4 z-50 w-72">
-          <div className="flex justify-between items-start mb-space-3">
-            <h3 className="font-semibold text-white text-small">
+        <div className="absolute top-full mt-space-3 left-1/2 -translate-x-1/2 bg-gradient-to-br from-ink-800 to-ink-900 border border-teal-700/40 rounded-xl shadow-2xl shadow-teal-500/20 p-space-6 z-50 w-96 backdrop-blur-sm">
+          <div className="flex justify-between items-start mb-space-4">
+            <h3 className="font-display text-h4 text-teal-100">
               ECDSA P-256 Signature
             </h3>
             <button
               onClick={() => setShowPopover(false)}
-              className="text-teal-500 hover:text-teal-600"
+              className="text-teal-500 hover:text-teal-400 transition-colors p-space-1"
             >
-              <X size={16} />
+              <X size={18} />
             </button>
           </div>
 
-          <p className="font-mono text-micro text-cream-50 break-all mb-space-4">
-            {fullSignature || signatureHash}
-          </p>
+          <div className="bg-ink-900/50 rounded-lg p-space-4 mb-space-4 border border-teal-700/20">
+            <p className="font-mono text-xs text-teal-200/80 break-all leading-relaxed">
+              {fullSignature || signatureHash}
+            </p>
+          </div>
 
-          <p className="text-micro text-teal-500">
+          <p className="text-sm text-teal-300/70 mb-space-4 leading-relaxed">
             Placeholder signature. Real ECDSA data from product backend before launch.
           </p>
 
@@ -54,9 +56,10 @@ export function VerifiedSealBadge({
             href={verifierUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block mt-space-3 text-teal-500 hover:text-teal-600 text-small underline"
+            className="inline-flex items-center gap-2 mt-space-4 px-space-4 py-space-2 rounded-lg bg-teal-500/20 hover:bg-teal-500/30 border border-teal-500/40 hover:border-teal-400/60 text-teal-300 hover:text-teal-200 text-small font-semibold transition-all duration-300"
           >
-            Verify with qrs-replay →
+            Verify with qrs-replay
+            <span>→</span>
           </a>
         </div>
       )}

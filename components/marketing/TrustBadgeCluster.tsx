@@ -37,27 +37,36 @@ export function TrustBadgeCluster() {
   ];
 
   return (
-    <div className="flex gap-space-6 flex-wrap justify-center md:justify-start">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-6">
       {badges.map((badge, idx) => {
         const Icon = badge.icon;
         return (
           <div
             key={idx}
-            className={`flex items-center gap-space-2 px-space-4 py-space-3 rounded-md border ${
+            className={`group flex flex-col items-start gap-space-4 px-space-6 py-space-6 rounded-xl border backdrop-blur-sm transition-all duration-300 ${
               badge.highlight
-                ? 'border-teal-500 bg-ink-800'
-                : 'border-teal-700 bg-transparent'
+                ? 'border-teal-500/50 bg-teal-500/15 hover:bg-teal-500/25 shadow-lg shadow-teal-500/20'
+                : 'border-teal-700/30 bg-ink-800/50 hover:border-teal-600/50 hover:bg-ink-800/80 hover:shadow-lg hover:shadow-teal-500/10'
             }`}
           >
             <Icon
-              size={badge.highlight ? 24 : 20}
-              className={`${badge.highlight ? 'text-teal-500' : 'text-teal-600'}`}
+              size={badge.highlight ? 32 : 28}
+              className={`transition-colors ${
+                badge.highlight ? 'text-teal-400' : 'text-teal-500 group-hover:text-teal-400'
+              }`}
+              strokeWidth={1.5}
             />
-            <div>
-              <p className="font-semibold text-small text-white">
+            <div className="flex-1">
+              <p className={`font-semibold text-sm leading-tight mb-space-2 ${
+                badge.highlight ? 'text-teal-200' : 'text-white'
+              }`}>
                 {badge.label}
               </p>
-              <p className="text-micro text-teal-700">{badge.description}</p>
+              <p className={`text-xs leading-relaxed ${
+                badge.highlight ? 'text-teal-300/70' : 'text-teal-200/60'
+              }`}>
+                {badge.description}
+              </p>
             </div>
           </div>
         );
