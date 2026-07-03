@@ -10,47 +10,51 @@ export default function PlatformPage() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="bg-ink-800 py-space-24 lg:py-space-32 px-6">
+      <section className="bg-ink-800 py-space-28 lg:py-space-40 px-6">
         <div className="max-w-screen-xl mx-auto">
-          <h1 className="font-display text-h1 lg:text-display text-white mb-space-6">
-            Quantitative Risk Platform
-          </h1>
-          <p className="text-body-lg text-cream-100 max-w-2xl mb-space-8">
-            Enterprise-grade risk analytics built for institutional investors, asset managers, and reinsurance professionals.
-          </p>
+          <div className="max-w-3xl">
+            <h1 className="font-display text-h1 lg:text-6xl font-bold text-white mb-space-6 leading-tight">
+              Quantitative Risk Platform
+            </h1>
+            <p className="text-body-lg text-cream-100 mb-space-8 leading-relaxed">
+              Enterprise-grade risk analytics built for institutional investors, asset managers, and reinsurance professionals.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="bg-cream-50 py-space-24 lg:py-space-32 px-6">
+      <section className="bg-cream-50 py-space-28 lg:py-space-40 px-6">
         <div className="max-w-screen-xl mx-auto">
-          <h2 className="font-display text-h2 text-ink-800 mb-space-16 text-center">
-            Core Capabilities
-          </h2>
+          <div className="mb-space-20">
+            <h2 className="font-display text-h2 text-ink-900 text-center">
+              Core Capabilities
+            </h2>
+          </div>
 
-          <div className="grid lg:grid-cols-3 gap-space-8">
+          <div className="grid lg:grid-cols-3 gap-space-8 max-w-5xl mx-auto">
             {[
               {
                 title: 'Portfolio Analytics',
-                description: 'Real-time VaR, TVaR, and scenario analysis for multi-asset portfolios.'
+                description: 'Real-time VaR, TVaR, and scenario analysis across multi-asset portfolios with instant recalculation.'
               },
               {
                 title: 'Stress Testing',
-                description: 'Historical and hypothetical scenarios with cryptographic reproducibility.'
+                description: 'Historical and hypothetical scenarios with cryptographic reproducibility for audit compliance.'
               },
               {
                 title: 'Risk Reporting',
-                description: 'Auditable risk reports with verified calculations and lineage tracking.'
+                description: 'Auditable risk reports with verified calculations and complete lineage tracking for every metric.'
               }
-            ].map((feature, idx) => (
+            ].map((feature) => (
               <div
                 key={feature.title}
-                className="bg-white rounded-lg border border-cream-100 p-space-8 hover:shadow-sm transition-shadow"
+                className="bg-white rounded-lg border border-cream-100 p-space-10 hover:shadow-sm transition-all duration-base"
               >
-                <h3 className="font-display text-h4 text-ink-800 mb-space-4">
+                <h3 className="font-display text-h4 text-ink-900 mb-space-4 font-semibold">
                   {feature.title}
                 </h3>
-                <p className="text-body text-text-muted">
+                <p className="text-body text-text-muted leading-relaxed">
                   {feature.description}
                 </p>
               </div>
