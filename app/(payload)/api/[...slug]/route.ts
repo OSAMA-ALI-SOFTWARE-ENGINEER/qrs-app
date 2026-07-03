@@ -1,53 +1,59 @@
-// Placeholder for Payload REST API
-// Will be wired up when Postgres connection is configured
-export async function GET() {
-  return new Response(
-    JSON.stringify({
-      message: 'Payload API endpoint ready',
-      status: 'pending_database_configuration',
-    }),
-    {
-      status: 503,
-      headers: { 'Content-Type': 'application/json' },
-    },
-  );
-}
+import { getPayload } from 'payload';
+import config from '@/cms/payload.config';
 
-export async function POST() {
-  return new Response(
-    JSON.stringify({
-      message: 'Payload API endpoint ready',
-      status: 'pending_database_configuration',
-    }),
-    {
-      status: 503,
-      headers: { 'Content-Type': 'application/json' },
-    },
-  );
-}
+const payload = getPayload({ config });
 
-export async function PATCH() {
-  return new Response(
-    JSON.stringify({
-      message: 'Payload API endpoint ready',
-      status: 'pending_database_configuration',
-    }),
-    {
-      status: 503,
-      headers: { 'Content-Type': 'application/json' },
-    },
-  );
-}
+export const GET = async (req: Request) => {
+  const payloadInstance = await payload;
+  const url = new URL(req.url);
+  const pathname = url.pathname.replace('/api/', '');
 
-export async function DELETE() {
-  return new Response(
-    JSON.stringify({
-      message: 'Payload API endpoint ready',
-      status: 'pending_database_configuration',
-    }),
-    {
-      status: 503,
-      headers: { 'Content-Type': 'application/json' },
-    },
-  );
-}
+  return payloadInstance.http({
+    pathname,
+    req,
+  });
+};
+
+export const POST = async (req: Request) => {
+  const payloadInstance = await payload;
+  const url = new URL(req.url);
+  const pathname = url.pathname.replace('/api/', '');
+
+  return payloadInstance.http({
+    pathname,
+    req,
+  });
+};
+
+export const PATCH = async (req: Request) => {
+  const payloadInstance = await payload;
+  const url = new URL(req.url);
+  const pathname = url.pathname.replace('/api/', '');
+
+  return payloadInstance.http({
+    pathname,
+    req,
+  });
+};
+
+export const DELETE = async (req: Request) => {
+  const payloadInstance = await payload;
+  const url = new URL(req.url);
+  const pathname = url.pathname.replace('/api/', '');
+
+  return payloadInstance.http({
+    pathname,
+    req,
+  });
+};
+
+export const PUT = async (req: Request) => {
+  const payloadInstance = await payload;
+  const url = new URL(req.url);
+  const pathname = url.pathname.replace('/api/', '');
+
+  return payloadInstance.http({
+    pathname,
+    req,
+  });
+};

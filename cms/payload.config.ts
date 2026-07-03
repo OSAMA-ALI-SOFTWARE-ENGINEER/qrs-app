@@ -1,4 +1,5 @@
 import path from 'path';
+import { fileURLToPath } from 'url';
 import { buildConfig } from 'payload';
 import { postgresAdapter } from '@payloadcms/db-postgres';
 import { lexicalEditor } from '@payloadcms/richtext-lexical';
@@ -11,6 +12,9 @@ import ValidationReports from './collections/ValidationReports';
 import PerilStatus from './collections/PerilStatus';
 import Redirects from './collections/Redirects';
 import FormSubmissions from './collections/FormSubmissions';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export default buildConfig({
   secret: process.env.PAYLOAD_SECRET || '',

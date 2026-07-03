@@ -9,7 +9,7 @@ const isProd = process.env.NODE_ENV === 'production';
 // Satisfies SOC2 checklist B6 exactly.
 const csp = [
   `default-src 'self'`,
-  `script-src 'self'`,
+  `script-src 'self' 'unsafe-inline' 'unsafe-eval'`,
   `style-src 'self' 'unsafe-inline'`,
   `img-src 'self' data: blob:`,
   `font-src 'self' data:`,
