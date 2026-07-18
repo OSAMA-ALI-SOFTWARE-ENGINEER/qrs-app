@@ -1,3 +1,4 @@
+import { DataCard } from '@/components/marketing/DataCard';
 import { buildMetadata } from '@/lib/metadata';
 
 export const metadata = buildMetadata({
@@ -10,29 +11,25 @@ export default function PlatformPage() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="bg-ink-800 py-space-28 lg:py-space-40 px-6">
-        <div className="max-w-screen-xl mx-auto">
-          <div className="max-w-3xl">
-            <h1 className="font-display text-h1 lg:text-6xl font-bold text-white mb-space-6 leading-tight">
-              Quantitative Risk Platform
-            </h1>
-            <p className="text-body-lg text-cream-100 mb-space-8 leading-relaxed">
-              Enterprise-grade risk analytics built for institutional investors, asset managers, and reinsurance professionals.
-            </p>
-          </div>
+      <section className="bg-ink-800 py-24 lg:py-40">
+        <div className="max-w-screen-xl mx-auto px-6">
+          <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            Quantitative Risk Platform
+          </h1>
+          <p className="text-lg lg:text-xl text-cream-100 leading-relaxed">
+            Enterprise-grade risk analytics built for institutional investors, asset managers, and reinsurance professionals.
+          </p>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="bg-cream-50 py-space-28 lg:py-space-40 px-6">
-        <div className="max-w-screen-xl mx-auto">
-          <div className="mb-space-20">
-            <h2 className="font-display text-h2 text-ink-900 text-center">
-              Core Capabilities
-            </h2>
-          </div>
+      {/* Core Capabilities Section */}
+      <section className="bg-cream-50 py-24 lg:py-40">
+        <div className="max-w-screen-xl mx-auto px-6">
+          <h2 className="text-3xl lg:text-4xl font-semibold text-ink-900 mb-16 text-center">
+            Core Capabilities
+          </h2>
 
-          <div className="grid lg:grid-cols-3 gap-space-8 max-w-5xl mx-auto">
+          <div className="grid lg:grid-cols-3 gap-8 mb-16">
             {[
               {
                 title: 'Portfolio Analytics',
@@ -47,18 +44,34 @@ export default function PlatformPage() {
                 description: 'Auditable risk reports with verified calculations and complete lineage tracking for every metric.'
               }
             ].map((feature) => (
-              <div
-                key={feature.title}
-                className="bg-white rounded-lg border border-cream-100 p-space-10 hover:shadow-sm transition-all duration-base"
-              >
-                <h3 className="font-display text-h4 text-ink-900 mb-space-4 font-semibold">
+              <DataCard key={feature.title} variant="light">
+                <h3 className="text-lg font-semibold text-ink-900 mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-body text-text-muted leading-relaxed">
+                <p className="text-sm text-text-muted leading-relaxed">
                   {feature.description}
                 </p>
-              </div>
+              </DataCard>
             ))}
+          </div>
+
+          <div className="bg-ink-800 rounded-lg p-12 text-center text-white -mx-6 px-6">
+            <h3 className="text-2xl font-semibold mb-4">Additional Features</h3>
+            <ul className="grid grid-cols-2 lg:grid-cols-3 gap-6 text-left max-w-2xl mx-auto">
+              {[
+                'Real-time monitoring',
+                'API access',
+                'Custom workflows',
+                'Multi-currency support',
+                'Regulatory reporting',
+                'Role-based access control'
+              ].map((feature) => (
+                <li key={feature} className="flex items-center gap-3">
+                  <span className="text-teal-400">✓</span>
+                  <span className="text-sm">{feature}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
